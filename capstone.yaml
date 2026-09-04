@@ -1,0 +1,27 @@
+name: Embeddable Widget & Lead-Capture Platform
+lane: python-fastapi
+run: docker compose up --build
+seed: docker compose exec api python seed.py
+test: docker compose exec api pytest
+base_url: http://localhost:8000
+endpoints:
+  - method: POST
+    path: /auth/signup
+  - method: POST
+    path: /auth/login
+  - method: GET
+    path: /widgets
+  - method: POST
+    path: /widgets
+  - method: GET
+    path: /widgets/{widget_id}/config
+  - method: GET
+    path: /widget/v1/widget.js
+  - method: POST
+    path: /widgets/{widget_id}/submissions
+  - method: GET
+    path: /dashboard/submissions
+  - method: GET
+    path: /dashboard/stats
+  - method: GET
+    path: /health
