@@ -10,7 +10,7 @@
 ## Where it was wrong / needed correction
 - the first draft of the rate limiter didn't stack a per-widget limit alongside the per-IP one; had to add a second Limiter instance
 - generated Alembic setup was skipped in favor of `Base.metadata.create_all`
-  for the capstone's time budget — note this as a known limitation in the README">
+  for the capstone's time budget.
 
 ## What I changed
 - `requirements.txt` — pinned `bcrypt==4.0.1` after passlib's bcrypt backend threw
